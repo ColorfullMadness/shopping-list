@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="units">
+        <item>Units</item>
+        <item>ml</item>
+        <item>g</item>
+    </array>
+</resources>

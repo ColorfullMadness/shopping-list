@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listsFragment">
+
+    <fragment
+        android:id="@+id/listsFragment"
+        android:name="com.example.zad2_shopping.ListsFragment"
+        android:label="ListsFragment">
+        <action
+            android:id="@+id/action_listFragment_to_addListFragment"
+            app:destination="@id/addListFragment" />
+        <action
+            android:id="@+id/action_listsFragment_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addListFragment"
+        android:name="com.example.zad2_shopping.AddListFragment"
+        android:label="fragment_add_list"
+        tools:layout="@layout/fragment_add_list" >
+        <argument
+            android:name="edit"
+            app:argType="boolean" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.zad2_shopping.ShoppingListFragment"
+        android:label="ShoppingListFragment" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_shoppingListFragment_to_addShoppingListItemFragment"
+            app:destination="@id/addShoppingListItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShoppingListItemFragment"
+        android:name="com.example.zad2_shopping.addShoppingListItemFragment"
+        android:label="addShoppingListItemFragment" >
+        <argument
+            android:name="positionList"
+            app:argType="integer" />
+        <argument
+            android:name="positionShoppingList"
+            app:argType="integer" />
+        <argument
+            android:name="edit"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
